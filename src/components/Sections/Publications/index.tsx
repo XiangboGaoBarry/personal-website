@@ -3,7 +3,7 @@ import {FC, memo} from 'react';
 import {selected, onsubmission, SectionId} from '../../../data/data';
 import Section from '../../Layout/Section';
 import PublicationSection from './PublicationSection';
-import {SkillGroup} from './Skills';
+// import {SkillGroup} from './Skills';
 import PublicationItem from './PublicationItem';
 
 const Resume: FC = memo(() => {
