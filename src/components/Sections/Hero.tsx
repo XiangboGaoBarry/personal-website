@@ -28,7 +28,7 @@ const Hero: FC = memo(() => {
           {!!personalSrc && (
             <div className="col-span-1 flex justify-center md:justify-start">
               <div className="relative h-60 w-40 overflow-hidden rounded-xl md:h-60 md:w-40">
-                <Image alt="about-me-image" layout="fill" objectFit="cover" src={personalSrc} />
+                <Image alt="about-me-image" layout="fill" objectFit="cover" src={personalSrc} priority/>
               </div>
             </div>
           )}
