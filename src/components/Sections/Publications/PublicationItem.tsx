@@ -14,8 +14,7 @@ const PublicationItem: FC<{item: PublicationItem}> = memo(({item}) => {
           <div>
             <a className="italic text-cyan-700 hover:not-italic" href={paperlink}>Paper</a><span> | </span> 
             <a className="italic text-cyan-700 hover:not-italic" href={paperlinksmall}>Compressed Paper</a> 
-            {githublink && <span> | <a className="italic text-cyan-700 hover:not-italic" href={githublink}>Code</a></span> }
-            
+            {githublink && <span> | <a className="italic text-cyan-700 hover:not-italic" href={githublink}>Code</a></span>}
           </div>
           <p className="text-md">{description}</p>
         </div>

@@ -1,4 +1,5 @@
 import {FC, memo} from 'react';
+
 import {selected, onsubmission, SectionId} from '../../../data/data';
 import Section from '../../Layout/Section';
 import PublicationSection from './PublicationSection';

@@ -28,6 +28,12 @@ import heroImage from '../images/header-background.webp';
 import profilepic from '../images/profilepic.jpg';
 import myImage from '../images/myimg.png';
 import testimonialImage from '../images/testimonial.webp';
+import AutoSortTrashBin from '../images/portfolio/AutoSortTrashBin.png';
+import WasteRecognition from '../images/portfolio/WasteRecognition.png';
+import TimeManager from '../images/portfolio/TimeManager.png';
+import GeometicPoseAffordance from '../images/portfolio/GeometicPoseAffordance.png';
+import PQAttackImg from '../images/publications/PQAttack.png';
+import GradientLibraLossImg from '../images/publications/Gradient-Libra-Loss.png';
 import {
   About,
   ContactSection,
@@ -191,11 +197,6 @@ export const skills: SkillGroup[] = [
 /**
  * Portfolio section
  */
-
-import AutoSortTrashBin from '../images/portfolio/AutoSortTrashBin.png';
-import WasteRecognition from '../images/portfolio/WasteRecognition.png';
-import TimeManager from '../images/portfolio/TimeManager.png';
-import GeometicPoseAffordance from '../images/portfolio/GeometicPoseAffordance.png';
 
 export const portfolioItems: PortfolioItem[] = [
   {
@@ -427,14 +428,6 @@ export const competitions: TimelineItem[] = [
     )
   }
 ]
-
-
-
-
-
-
-import PQAttackImg from '../images/publications/PQAttack.png';
-import GradientLibraLossImg from '../images/publications/Gradient-Libra-Loss.png';
 
 
 export const onsubmission: PublicationItem[] = [
