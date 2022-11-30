@@ -26,6 +26,7 @@ import porfolioImage9 from '../images/portfolio/portfolio-9.jpg';
 import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
+import myImage from '../images/myimg.png';
 import testimonialImage from '../images/testimonial.webp';
 import {
   About,
@@ -38,6 +39,7 @@ import {
   Social,
   TestimonialSection,
   TimelineItem,
+  PublicationItem,
 } from './dataDef';
 
 /**
@@ -57,6 +59,7 @@ export const SectionId = {
   Contact: 'contact',
   Portfolio: 'portfolio',
   Resume: 'resume',
+  Publications: 'publications',
   Skills: 'skills',
   Stats: 'stats',
   Testimonials: 'testimonials',
@@ -69,24 +72,18 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: `I'm Tim Baker.`,
+  personalSrc: profilepic,
+  name: `Xiangbo Gao`,
   description: (
     <>
       <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        I'm a Victoria based <strong className="text-stone-100">Full Stack Software Engineer</strong>, currently working
-        at <strong className="text-stone-100">Instant Domains</strong> helping build a modern, mobile-first, domain
-        registrar and site builder.
-      </p>
-      <p className="prose-sm text-stone-200 sm:prose-base lg:prose-lg">
-        In my free time time, you can catch me training in <strong className="text-stone-100">Muay Thai</strong>,
-        plucking my <strong className="text-stone-100">banjo</strong>, or exploring beautiful{' '}
-        <strong className="text-stone-100">Vancouver Island</strong>.
+        I love to use deep learning to solve real-world problems.
       </p>
     </>
   ),
   actions: [
     {
-      href: '/assets/resume.pdf',
+      href: 'assets/Resume.pdf',
       text: 'Resume',
       primary: true,
       Icon: DownloadIcon,
@@ -103,17 +100,17 @@ export const heroData: Hero = {
  * About section
  */
 export const aboutData: About = {
-  profileImageSrc: profilepic,
-  description: `Use this bio section as your way of describing yourself and saying what you do, what technologies you like
-  to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
-  in.`,
+  profileImageSrc: myImage,
+  description: `I am a current senior undergraduate student at the University of California, Irvine. 
+  My research focus on deep learning and its applications such as computer vision and autonomous system. 
+  I am currently looking for MS/PhD and internship opportunities`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
+    {label: 'Location', text: 'Irvine, CA', Icon: MapIcon},
+    {label: 'Age', text: '22', Icon: CalendarIcon},
+    {label: 'Nationality', text: 'China', Icon: FlagIcon},
+    {label: 'Interests', text: 'Skiing, Rock climbing', Icon: SparklesIcon},
+    {label: 'Study', text: 'University of California, Irvine', Icon: AcademicCapIcon},
+    // {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
   ],
 };
 
@@ -125,67 +122,67 @@ export const skills: SkillGroup[] = [
     name: 'Spoken languages',
     skills: [
       {
-        name: 'English',
+        name: 'Chinese',
         level: 10,
       },
       {
-        name: 'French',
+        name: 'English',
+        level: 7,
+      },
+      // {
+      //   name: 'Spanish',
+      //   level: 3,
+      // },
+    ],
+  },
+  {
+    name: 'Research areas',
+    skills: [
+      {
+        name: 'Computer Vision',
+        level: 6,
+      },
+      {
+        name: 'Graph Learning',
         level: 4,
       },
       {
-        name: 'Spanish',
+        name: 'Reinforcement Learning',
         level: 3,
       },
     ],
   },
   {
-    name: 'Frontend development',
+    name: 'Programming languages',
     skills: [
       {
-        name: 'React',
+        name: 'Python',
         level: 9,
       },
       {
-        name: 'Typescript',
-        level: 7,
+        name: 'C++',
+        level: 4,
       },
       {
-        name: 'GraphQL',
-        level: 6,
+        name: 'Java',
+        level: 3,
       },
     ],
   },
   {
-    name: 'Backend development',
+    name: 'Soft skills',
     skills: [
       {
-        name: 'Node.js',
+        name: 'Communication',
         level: 8,
       },
       {
-        name: 'Rust',
-        level: 5,
+        name: 'Leadership',
+        level: 8,
       },
       {
-        name: 'Golang',
-        level: 4,
-      },
-    ],
-  },
-  {
-    name: 'Mobile development',
-    skills: [
-      {
-        name: 'React Native',
-        level: 9,
-      },
-      {
-        name: 'Flutter',
-        level: 4,
-      },
-      {
-        name: 'Swift',
-        level: 3,
+        name: 'Humour',
+        level: 0.1,
       },
     ],
   },
@@ -194,73 +191,91 @@ export const skills: SkillGroup[] = [
 /**
  * Portfolio section
  */
+
+import AutoSortTrashBin from '../images/portfolio/AutoSortTrashBin.png';
+import WasteRecognition from '../images/portfolio/WasteRecognition.png';
+import TimeManager from '../images/portfolio/TimeManager.png';
+import GeometicPoseAffordance from '../images/portfolio/GeometicPoseAffordance.png';
+
 export const portfolioItems: PortfolioItem[] = [
   {
-    title: 'Project title 1',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage1,
+    title: 'Auto Sort Trash Bin',
+    description: 'A trash bin that automatic sort four different categories of trash',
+    url: 'assets/documents/portfolio/AutoSortTrashBin.pdf',
+    image: AutoSortTrashBin,
   },
   {
-    title: 'Project title 2',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage2,
+    title: 'ZotBins Waste Recognition',
+    description: 'Waste classification and waste object detection modules for ZotBins',
+    url: 'https://github.com/zotbins/Zotbins-Waste-Recognition',
+    image: WasteRecognition,
   },
   {
-    title: 'Project title 3',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage3,
+    title: 'Time Manager',
+    description: 'A time manager app built with React, Node.js, and MongoDB',
+    url: 'https://github.com/XiangboGaoBarry/TimeManager',
+    image: TimeManager,
   },
   {
-    title: 'Project title 4',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage4,
+    title: 'Geometic Pose Affordance',
+    description: 'Project of UCI Hackathon 2020',
+    url: 'https://github.com/XiangboGaoBarry/UCI-Hackathon-GPA/blob/master/democode_GPA_UCIhackthon.ipynb',
+    image: GeometicPoseAffordance,
   },
   {
-    title: 'Project title 5',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage5,
+    title: 'PQAttack',
+    description: 'Project Repo of "Adversarial Attack with Semantic Pattern"',
+    url: 'https://github.com/XiangboGaoBarry/PQAttack',
+    image: PQAttackImg,
   },
-  {
-    title: 'Project title 6',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage6,
-  },
-  {
-    title: 'Project title 7',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage7,
-  },
-  {
-    title: 'Project title 8',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage8,
-  },
-  {
-    title: 'Project title 9',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage9,
-  },
-  {
-    title: 'Project title 10',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage10,
-  },
-  {
-    title: 'Project title 11',
-    description: 'Give a short description of your project here.',
-    url: 'https://timbaker.me',
-    image: porfolioImage11,
-  },
+  // {
+  //   title: 'Project title 4',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage4,
+  // },
+  // {
+  //   title: 'Project title 5',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage5,
+  // },
+  // {
+  //   title: 'Project title 6',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage6,
+  // },
+  // {
+  //   title: 'Project title 7',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage7,
+  // },
+  // {
+  //   title: 'Project title 8',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage8,
+  // },
+  // {
+  //   title: 'Project title 9',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage9,
+  // },
+  // {
+  //   title: 'Project title 10',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage10,
+  // },
+  // {
+  //   title: 'Project title 11',
+  //   description: 'Give a short description of your project here.',
+  //   url: 'https://timbaker.me',
+  //   image: porfolioImage11,
+  // },
 ];
 
 /**
@@ -268,42 +283,183 @@ export const portfolioItems: PortfolioItem[] = [
  */
 export const education: TimelineItem[] = [
   {
-    date: 'April 2007',
-    location: 'Clown college',
-    title: 'Masters in Beer tasting',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2018.9 - 2023.3',
+    location: 'University of California, Irvine',
+    title: 'B.S. in Computer Science | B.S. in Mathematics',
+    content: <p>GPA 3.72/4</p>,
   },
   {
-    date: 'March 2003',
-    location: 'School of Business',
-    title: 'What did you study 101',
-    content: <p>Describe your experience at school, what you learned, what useful skills you have acquired etc.</p>,
+    date: '2019.6 - 2019.9',
+    location: 'University of California, Berkeley',
+    title: 'Summer Session',
+    content: <p>GPA 3.8/4</p>,
   },
 ];
 
 export const experience: TimelineItem[] = [
   {
-    date: 'March 2010 - Present',
-    location: 'Awesome Development Company',
-    title: 'Senior UX Engineer',
+    date: '2022.5 - Present',
+    location: 'Advanced Integrated Cyber-Physical Systems Lab, University of California, Irvine',
+    title: 'Auto-generated graphical model in the autonomous driving system',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul>
+      <li>-Designed and created a multi-domain autonomous driving dataset for different driving scenarios using CARLA simulator.</li>
+      <li>-Designed a probabilistic LSTM structure that encodes states to variational embeddings. Transferred the knowledge from PointNet to encode the unordered lane marks information.</li>
+      <li>-Evaluating the model performance and cross-domain transferability by various metrics and comparing them with other motion prediction algorithms (MTP, PGP, Trajectron++, etc.)</li>
+      </ul>
     ),
   },
   {
-    date: 'March 2007 - February 2010',
-    location: 'Garage Startup Studio',
-    title: 'Junior bug fixer',
+    date: '2022.2 - 2022.6',
+    location: 'Intelligent Dynamics Lab, University of California, Irvine',
+    title: 'Goal-conditional Reinforcement Learning',
     content: (
-      <p>
-        Describe work, special projects, notable achievements, what technologies you have been working with, and
-        anything else that would be useful for an employer to know.
-      </p>
+      <ul>
+      <li>-Reviewed literature on imitation learning and general reinforcement learning.</li>
+      <li>-Come up with spring loss which uses the idea of contrastive learning that aligns the
+embeddings in linear distance.</li>
+      <li>-Visualization by the PCA dimension reduction method shows that the learned embedding
+better aligns with the real-world trajectory.</li>
+      </ul>
     ),
   },
+  {   
+  date: '2022.6 - 2022.8',
+  location: 'Independent',
+  title: 'Multi-modal 3D Object Detection in autonomous driving scenario',
+  content: (
+    <ul>
+    <li>-iterature review of existing general 3D object detection algorithms including camera-based, point-based, voxel-based, and multi-model algorithms.</li>
+    <li>--	Run experiments on camera-only nad multi-model 3D object detection algorithms (Pseudo-LiDAR, Lidar Painting, Bev fusion).</li>
+    </ul>
+  ),
+  },
+  
+  {
+    date: '2021.4 - 2022.11',
+    location: 'Institute of Computer Vision, Shenzen University, China',
+    title: 'Adversarial Attack with Semantic Pattern',
+    content: (
+      <ul>
+      <li>-Proposed a novel Patch Quilting Generative Adversarial Network (PQ-GAN) training strategy
+that learned a set of cascaded generators to manipulate image patterns of varying scales
+without distortion or discontinuity.</li>
+      <li>-Applied the PQ-GAN to adversarial attacks that delivered state-of-the-art attack strength
+and robustness with respect to various types of defense algorithms.</li>
+      <li>-Published work <a className='italic text-cyan-700 hover:not-italic' href='https://arxiv.org/pdf/2208.06222.pdf'> Scale-free and Task-agnostic Attack: Generating Photo-realistic Adversarial Patterns with Patch Quilting Generator.</a> </li>
+      </ul>
+    ),
+  },
+  {
+    date: '2021.4 - 2022.11',
+    location: 'Institute of Computer Vision, Shenzen University, China',
+    title: 'Long-tailed Cervical Cell Detection',
+    content: (
+      <ul>
+      <li>-Assisted to propose a Grad-Libra Loss that leverages the gradients to dynamically
+calibrate the hardness of each sample and rebalanced their gradients..</li>
+      <li>-Published work <a className='italic text-cyan-700 hover:not-italic' href='https://www.researchgate.net/profile/Xuechen-Li-5/publication/362567778_Sample_hardness_based_gradient_loss_for_long-tailed_cervical_cell_detection/links/632807bc071ea12e36443214/Sample-hardness-based-gradient-loss-for-long-tailed-cervical-cell-detection.pdf'> Sample Hardness Based Gradient Loss for Long-Tailed Cervical Cell Detection.</a> </li>
+      </ul>
+    ),
+  },
+  {
+    date: '2020.9 - 2022.4',
+    location: 'Donald Bren Hall, University of California, Irvine',
+    title: <div><a className='text-cyan-700' href='https://zotbins.github.io/'>ZerO</a> Waste Anteaters</div>,
+    content: (
+      <ul>
+      <li>-Led a team of 8 members to explore waste recognition solutions.</li>
+      <li>-Designed a computer vision and waste recognition tutorial that stimulate students' interests.</li>
+      <li>-Trained light-weight models for waste image classification (Mobilenetv3, ShuffleNet, and
+EfficientNet) and waste object detection (Faster-RCNN and YOLOv5); achieved ~0.94
+classification accuracy and ~0.76 mean precision error.</li>
+      <li>-Deployed the waste recognition models to resource-limited machines (Jetson Nano)</li>
+      </ul>
+    ),
+  }
+];
+
+
+export const employment: TimelineItem[] = [
+  {
+    date: '2020.6 - 2020.8',
+    location: 'Tandll Investment Management Limited, China',
+    title: 'Full-stack Software developer',
+    content: (
+      <p>
+        -	Built a quantitative trading support website using Python (Django & React) and MySQL, 
+        which supported high-level trading management, 
+        model parameters modification, and historical data & behaviors Visualization
+      </p>
+    )
+  }
+]
+
+export const competitions: TimelineItem[] = [
+  {
+    date: '2020.4',
+    location: 'University of California, Irvine, CA, USA',
+    title: 'UCI 2020 Machine Learning Hackathon',
+    content: (
+      <p>
+        1st place on the <a className='italic text-cyan-700 hover:not-italic' href='https://github.com/XiangboGaoBarry/UCI-Hackathon-GPA/blob/master/democode_GPA_UCIhackthon.ipynb'>subproject</a> of <a className='italic text-cyan-700 hover:not-italic' href='https://arxiv.org/pdf/1905.07718.pdf'>3D Human Pose with Scene Constraints</a>
+      </p>
+    )
+  },
+  {
+    date: '2020.2',
+    location: 'Irvine, CA',
+    title: 'Google Hash Code 2020 Algorithms Competition',
+    content: (
+      <p>
+        Result: 2nd place / 13 at UCI | Team name: &epsilon;=.99
+      </p>
+    )
+  },
+  {
+    date: '2020.6',
+    location: 'China',
+    title: 'Netease Hackathon Competition',
+    content: (
+      <p>
+        Outstanding Award
+      </p>
+    )
+  }
+]
+
+
+
+
+
+
+import PQAttackImg from '../images/publications/PQAttack.png';
+import GradientLibraLossImg from '../images/publications/Gradient-Libra-Loss.png';
+
+
+export const onsubmission: PublicationItem[] = [
+  {
+    title: 'Scale-free and Task-agnostic Attack: Generating Photo-realistic Adversarial Patterns with Patch Quilting Generator',
+    imageSrc: PQAttackImg,
+    authors: 'Xiangbo Gao, Cheng Luo, Qinliang Lin, Weicheng Xie, Minmin Liu, Linlin Shen, Keerthy Kusumam, Siyang Song',
+    conference: 'arXiv:2208.06222',
+    paperlink: 'https://arxiv.org/pdf/2208.06222.pdf',
+    paperlinksmall: 'assets/documents/publications/PQAttack.pdf',
+    githublink: 'https://github.com/XiangboGaoBarry/PQAttack',
+    description: 'Traditional L_p norm-restricted image attack algorithms suffer from poor transferability to black box scenarios and poor robustness to defense algorithms. Recent CNN generator-based attack approaches can synthesize unrestricted and semantically meaningful entities to the image, which is shown to be transferable and robust. However, such methods attack images by either synthesizing local adversarial entities, which are only suitable for attacking specific contents or performing global attacks, which are only applicable to a specific image scale. In this paper, we propose a novel Patch Quilting Generative Adversarial Networks (PQ-GAN) to learn the first scale-free CNN generator that can be applied to attack images with arbitrary scales for various computer vision tasks. The principal investigation on transferability of the generated adversarial examples, robustness to defense frameworks, and visual quality assessment show that the proposed PQG-based attack framework outperforms the other nine state-of-the-art adversarial attack approaches when attacking the neural networks trained on two standard evaluation datasets (i.e., ImageNet and CityScapes).' }
+];
+
+export const selected: PublicationItem[] = [
+  {
+    title: 'Sample Hardness Based Gradient Loss for Long-Tailed Cervical Cell Detection',
+    imageSrc: GradientLibraLossImg,
+    authors: 'Minmin Liu, Xuechen Li, Xiangbo Gao, Junliang Chen, Linlin Shen, Huisi Wu',
+    conference: 'Medical Image Computing and Computer Assisted Intervention – MICCAI 2022',
+    paperlink: 'https://arxiv.org/pdf/2208.03779.pdf',
+    paperlinksmall: 'assets/documents/publications/Gradient-Libra-Loss.pdf',
+    githublink: '',
+    description: 'Due to the difficulty of cancer samples collection and annotation, cervical cancer datasets usually exhibit a long-tailed data distribution. When training a detector to detect the cancer cells in a WSI (Whole Slice Image) image captured from the TCT (Thinprep Cytology Test) specimen, head categories (e.g. normal cells and inflammatory cells) typically have a much larger number of samples than tail categories (e.g. cancer cells). Most existing state-of-the-art long-tailed learning methods in object detection focus on category distribution statistics to solve the problem in the long-tailed scenario without considering the "hardness" of each sample. To address this problem, in this work we propose a Grad-Libra Loss that leverages the gradients to dynamically calibrate the degree of hardness of each sample for different categories, and re-balance the gradients of positive and negative samples. Our loss can thus help the detector to put more emphasis on those hard samples in both head and tail categories. Extensive experiments on a long-tailed TCT WSI image dataset show that the mainstream detectors, e.g. RepPoints, FCOS, ATSS, YOLOF, etc. trained using our proposed Gradient-Libra Loss, achieved much higher (7.8%) mAP than that trained using cross-entropy classification loss.'
+  }
 ];
 
 /**
@@ -336,27 +492,28 @@ export const testimonial: TestimonialSection = {
 
 export const contact: ContactSection = {
   headerText: 'Get in touch.',
-  description: 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
+  description: '',
+  // 'Here is a good spot for a message to your readers to let them know how best to reach out to you.',
   items: [
     {
       type: ContactType.Email,
-      text: 'reachout@timbaker.me',
-      href: 'mailto:reachout@timbaker.me',
+      text: 'xiangbog@uci.edu',
+      href: 'mailto:xiangbog@uci.edu',
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Irvine, CA',
+      // href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
     },
-    {
-      type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
-    },
+    // {
+    //   type: ContactType.Instagram,
+    //   text: '@tbakerx',
+    //   href: 'https://www.instagram.com/tbakerx/',
+    // },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: 'XiangboGaoBarry',
+      href: 'https://github.com/XiangboGaoBarry',
     },
   ],
 };
@@ -365,9 +522,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/XiangboGaoBarry'},
+  // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/xiangbo-gao-9ab24417a/'},
+  // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
+  // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
 ];

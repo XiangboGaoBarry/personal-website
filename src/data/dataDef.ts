@@ -22,6 +22,7 @@ export interface HomepageMeta {
  */
 export interface Hero {
   imageSrc: string;
+  personalSrc: string;
   name: string;
   description: JSX.Element;
   actions: HeroActionItem[];
@@ -89,8 +90,19 @@ export interface PortfolioItem {
 export interface TimelineItem {
   date: string;
   location: string;
-  title: string;
+  title: string | JSX.Element;
   content: JSX.Element;
+}
+
+export interface PublicationItem {
+  title: string;
+  imageSrc: string;
+  authors: string;
+  conference: string;
+  paperlink: string;
+  paperlinksmall: string;
+  githublink: string;
+  description: string;
 }
 
 /**
