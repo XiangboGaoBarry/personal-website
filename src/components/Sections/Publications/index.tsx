@@ -3,7 +3,6 @@ import {FC, memo} from 'react';
 import {selected, onsubmission, SectionId} from '../../../data/data';
 import Section from '../../Layout/Section';
 import PublicationSection from './PublicationSection';
-// import {SkillGroup} from './Skills';
 import PublicationItem from './PublicationItem';
 
 const Resume: FC = memo(() => {
@@ -21,14 +20,6 @@ const Resume: FC = memo(() => {
             <PublicationItem item={item} key={`${item.title}-${index}`} />
           ))}
         </PublicationSection>
-        {/* <ResumeSection title="Skills">
-          <p className="pb-8">Here you can show a snapshot of your skills to show off to employers</p>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            {skills.map((skillgroup, index) => (
-              <SkillGroup key={`${skillgroup.name}-${index}`} skillGroup={skillgroup} />
-            ))}
-          </div>
-        </ResumeSection> */}
       </div>
     </Section>
   );

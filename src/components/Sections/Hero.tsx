@@ -23,9 +23,6 @@ const Hero: FC = memo(() => {
           src={imageSrc}
         />
         <div className="z-10  max-w-screen-lg px-4 lg:px-0">
-        
-        
-          {/* <div className="flex flex-col items-center gap-y-6 rounded-xl bg-gray-800/40 p-6 text-center shadow-lg backdrop-blur-sm"> */}
           <div className="flex flex-col items-center gap-y-6 text-center">
           <div className="flex justify-center">
           {!!personalSrc && (
