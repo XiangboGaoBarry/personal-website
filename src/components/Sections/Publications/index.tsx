@@ -1,11 +1,10 @@
 import {FC, memo} from 'react';
-
 import {selected, onsubmission, SectionId} from '../../../data/data';
 import Section from '../../Layout/Section';
 import PublicationSection from './PublicationSection';
 import PublicationItem from './PublicationItem';
 
-const Resume: FC = memo(() => {
+const Publication: FC = memo(() => {
   return (
     <Section className="bg-neutral-100" sectionId={SectionId.Publications}>
       <h1 className="text-center text-2xl font-bold uppercase text-neutral-800 my-4">Publications</h1>
@@ -25,5 +24,5 @@ const Resume: FC = memo(() => {
   );
 });
 
-Resume.displayName = 'Resume';
-export default Resume;
+Publication.displayName = 'Publication';
+export default Publication;
