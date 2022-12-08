@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/outline';
 
 import GithubIcon from '../components/Icon/GithubIcon';
+import GoogleScholarIcon from '../components/Icon/GoogleScholarIcon';
 // import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
@@ -52,8 +53,8 @@ import {
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Xiangbo Gao',
+  description: "Xiangbo Gao's personal website",
 };
 
 /**
@@ -293,7 +294,7 @@ export const education: TimelineItem[] = [
     date: '2019.6 - 2019.9',
     location: 'University of California, Berkeley',
     title: 'Summer Session',
-    content: <p>GPA 3.8/4</p>,
+    content: <p>GPA 3.566/4</p>,
   },
 ];
 
@@ -517,6 +518,7 @@ export const contact: ContactSection = {
  */
 export const socialLinks: Social[] = [
   {label: 'Github', Icon: GithubIcon, href: 'https://github.com/XiangboGaoBarry'},
+  {label: 'Google Scholar', Icon: GoogleScholarIcon, href: 'https://scholar.google.com/citations?user=dcw41CcAAAAJ&hl=en'},
   // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
   {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/xiangbo-gao-9ab24417a/'},
   // {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
