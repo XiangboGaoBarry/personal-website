@@ -14,7 +14,9 @@ import GoogleScholarIcon from '../components/Icon/GoogleScholarIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
 // import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
 // import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
+// import heroImage from '../images/header-background.webp';
+import heroImage1 from '../images/auto_img.png';
+import heroImage2 from '../images/auto_img2.png';
 // import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 // import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 // import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
@@ -78,7 +80,8 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  * Hero section
  */
 export const heroData: Hero = {
-  imageSrc: heroImage,
+  imageSrc1: heroImage1,
+  imageSrc2: heroImage2,
   personalSrc: profilepic,
   name: `Xiangbo Gao`,
   description: (

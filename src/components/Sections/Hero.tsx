@@ -8,21 +8,48 @@ import Section from '../Layout/Section';
 import Socials from '../Socials';
 
 const Hero: FC = memo(() => {
-  const {imageSrc, personalSrc, name, description, actions} = heroData;
+  const {imageSrc1, imageSrc2, personalSrc, name, description, actions} = heroData;
 
   return (
     <Section noPadding sectionId={SectionId.Hero}>
-      <div className="relative flex h-screen w-screen items-center justify-center">
-        <Image
-          alt={`${name}-image`}
-          className="absolute z-0"
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-          priority
-          src={imageSrc}
-        />
-        <div className="z-10  max-w-screen-lg px-4 lg:px-0">
+      
+      <div className='flex mt-20 mb-5 place-content-center gap-4'>
+        
+          <div className="col-span-1 flex justify-center md:justify-start">
+            <div className="relative h-60 w-48 overflow-hidden rounded-xl md:h-60 md:w-48">
+                <Image alt="about-me-image" layout="fill" objectFit="cover" priority src={personalSrc}/>
+            </div>
+          </div>
+        
+        <div className={classNames('col-span-1 flex flex-col gap-y-6', {'md:col-span-3': !!personalSrc})}>
+          
+          <div className="flex flex-col gap-y-2">
+            <h1 className="text-5xl font-bold text-white">{name}</h1>
+            <p className="prose prose-sm text-gray-300 sm:prose-base">{description}</p>
+          </div>
+          <div className="flex gap-x-4 text-neutral-100">
+              <Socials />
+            </div>
+            <div className="flex w-full gap-x-4">
+              {actions.map(({href, text, primary, Icon}) => (
+                <a
+                  className={classNames(
+                    'flex gap-x-2 rounded-full border-2 bg-none py-2 px-4 text-sm font-medium text-white ring-offset-gray-700/80 hover:bg-gray-700/80 focus:outline-none focus:ring-2 focus:ring-offset-2 sm:text-base',
+                    primary ? 'border-orange-500 ring-orange-500' : 'border-white ring-white',
+                  )}
+                  href={href}
+                  key={text}>
+                  {text}
+                  {Icon && <Icon className="h-5 w-5 text-white sm:h-6 sm:w-6" />}
+                </a>
+              ))}
+            
+            </div>
+        </div>
+      </div>
+
+
+          {/* <div className="z-10  max-w-screen-lg px-4 lg:px-0">
           <div className="flex flex-col items-center gap-y-6 text-center">
           <div className="flex justify-center">
           {!!personalSrc && (
@@ -53,15 +80,40 @@ const Hero: FC = memo(() => {
               ))}
             </div>
           </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-6 flex justify-center">
+        </div> */}
+      {/* <div className=""> */}
+      <p className="text-xl text-center text-gray-300">Two images generated using chatGPT and DALL-E 2</p>
+      <p className="text-center text-gray-300">(Use chatGPT to summarize my C and use DALL-E 2 to generate image based on the summary)</p>
+
+      <div className="relative flex items-center justify-center">
+        <Image
+          alt={`${name}-image`}
+          className="absolute z-0"
+          // layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          priority
+          src={imageSrc1}
+        />
+
+        <Image
+          alt={`${name}-image`}
+          className="absolute z-0"
+          // layout="fill"
+          objectFit="cover"
+          placeholder="blur"
+          priority
+          src={imageSrc2}
+        />
+        {/* <div className="absolute inset-x-0 bottom-6 flex justify-center">
           <a
             className="rounded-full bg-white p-1 ring-white ring-offset-2 ring-offset-gray-700/80 focus:outline-none focus:ring-2 sm:p-2"
             href={`/#${SectionId.About}`}>
             <ChevronDownIcon className="h-5 w-5 bg-transparent sm:h-6 sm:w-6" />
           </a>
-        </div>
+        </div> */}
       </div>
+      {/* </div> */}
     </Section>
   );
 });
